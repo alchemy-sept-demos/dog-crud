@@ -5,6 +5,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import DogList from './views/Dogs/DogList';
 import DogDetail from './views/Dogs/DogDetail';
 import Header from './components/Header/Header';
+import DogEdit from './views/Dogs/DogEdit';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Header />
         <Switch>
           <Route path="/" exact component={DogList} />
+          <Route path="/dogs/:id/edit" component={DogEdit} />
           <Route path="/dogs/:id" component={DogDetail} />
         </Switch>
       </BrowserRouter>
