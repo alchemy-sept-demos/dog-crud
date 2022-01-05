@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import Dog from '../../components/dogs/Dog';
 import Loader from '../../components/Loader/Loader';
 import { fetchDogById } from '../../services/dogs';
