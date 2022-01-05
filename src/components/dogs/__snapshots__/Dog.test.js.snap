@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dog> should show the bio if showDetail=true 1`] = `
+<div>
+  <div
+    class="dog-detail"
+  >
+    <h3>
+      Meet 
+      Barton
+    </h3>
+    <img
+      src="https://placedog.net/500?id=6"
+    />
+    <p>
+      Barton
+       is a(n) 
+      1 year old
+       
+      Weimaraner
+    </p>
+    <div
+      class="details"
+    >
+      <p>
+        Cute dog
+      </p>
+    </div>
+  </div>
+</div>
+`;

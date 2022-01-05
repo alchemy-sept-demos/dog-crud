@@ -1,0 +1,96 @@
+* {
+  --color-light: #f4f1de;
+  --color-orange: #e07a5f;
+  --color-blue: #3d405b;
+  --color-green: #81b29a;
+  --color-yellow: #f2cc8f;
+  box-sizing: border-box;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  color: var(--color-blue);
+  text-align: center;
+  width: 400px;
+  background-color: var(--color-yellow);
+  border-radius: 5px;
+}
+
+form .action {
+  display: flex;
+  justify-content: center;
+}
+
+.form-control {
+  position: relative;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: 'left right';
+}
+input[type='text'],
+input[type='number'],
+select,
+textarea {
+  background-color: var(--color-light);
+  border: none;
+  border-radius: 20px;
+  height: 2rem;
+  width: 90%;
+  margin-top: 5px;
+  padding-left: 10px;
+  grid-area: right;
+  justify-self: left;
+}
+
+input[type='text']:focus,
+input[type='number']:focus,
+select:focus,
+textarea:focus {
+  border: none;
+  box-shadow: 0 0 3px 2px var(--color-green);
+  outline: none;
+}
+
+label {
+  grid-area: left;
+  justify-self: center;
+  align-self: center;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.button,
+button {
+  margin: 10px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  width: 80%;
+  height: 2rem;
+  background-color: var(--color-blue);
+  color: var(--color-light);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+a.button.warning,
+button.warning {
+  background-color: var(--color-orange);
+}
+
+textarea {
+  height: 150px;
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+}

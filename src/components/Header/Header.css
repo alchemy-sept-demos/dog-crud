@@ -1,0 +1,16 @@
+.header {
+  width: 100vw;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-blue);
+}
+
+.header a,
+.header a:visited {
+  color: var(--color-green);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
