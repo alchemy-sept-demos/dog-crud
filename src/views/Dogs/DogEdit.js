@@ -31,7 +31,7 @@ export default function DogEdit() {
   // };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = await updateDog(params.id, name, bio, image, breed);
+    await updateDog(params.id, name, bio, image, breed);
   };
 
   return (
