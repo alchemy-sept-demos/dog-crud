@@ -12,6 +12,7 @@ export default function DogForm({
   breed,
   setBreed,
   handleSubmit,
+  errors,
 }) {
   return (
     <div className="dog-form">
@@ -28,6 +29,7 @@ export default function DogForm({
               setName(e.target.value);
             }}
           />
+          <p>{errors.name}</p>
         </div>
         <div className="form-control">
           <label>Bio:</label>
