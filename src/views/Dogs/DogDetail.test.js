@@ -6,7 +6,7 @@ it('should render an individual dog', async () => {
   // render the thing
   // OPTION 1 -- when using react router hooks (useParams)
   // const { container } = render(
-  //   // MemoryRouter is needed because <Teams> uses the <Link> component
+  //   // MemoryRouter is needed because <DogDetail> uses stuff from react-router
   //   <MemoryRouter initialEntries={['/dogs/4']}>
   //     <Route path="/dogs/:id" component={DogDetail} />
   //   </MemoryRouter>
