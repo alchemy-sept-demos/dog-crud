@@ -9,7 +9,7 @@ export async function fetchDogById(id) {
   return checkError(resp);
 }
 
-export async function updateDog(id, name, bio, image, breed) {
+export async function updateDog(id, name, bio, image, age, breed) {
   const resp = await client
     .from('dogs')
     .update({
@@ -17,7 +17,23 @@ export async function updateDog(id, name, bio, image, breed) {
       bio,
       image,
       breed,
+      age,
     })
     .eq('id', id);
   return checkError(resp);
+}
+
+export async function createDog(name, bio, image, age, breed) {
+  const resp = await client
+    .from('dogs')
+    .insert({
+      name: name,
+      bio: bio,
+      image: image,
+      breed: breed,
+      age: age,
+    })
+    .single();
+
+  return resp;
 }

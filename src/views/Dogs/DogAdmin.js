@@ -19,12 +19,33 @@ export default function DogAdmin() {
   const submitter = async (e) => {
     e.preventDefault();
     if (name.length === 0) {
+      // React data validation -- can use to prevent bad data being written to your database
       setErrors((prevValue) => ({ ...prevValue, name: 'Please enter a name' }));
     } else {
-      const { status, error, data } = await createDog(name, bio, image, age, breed);
-      console.log(data);
+      // OPTION ONE FOR ERRORS
+      // Wrap everything in a try / catch
+      // The checkError function in services/client.js will throw a JS
+      // error if the request fails -- for this to work, you have to use
+      // the checkError function
+
+      // try {
+      //   const data = await createDog(name, bio, image, age, breed);
+      //   console.log(data);
+      //   history.push(`/dogs/${data.id}`);
+      // } catch (e) {
+      //   console.log(e);
+      //   setMessage('Something went wrong :(');
+      // }
+
+      // OPTION TWO FOR ERRORS
+      // get the FULL response from supabase (don't use the checkError function)
+      // the full response returns a status key with information about the request
+      // if the request errored, it will return an http status code of 400 or higher
+
+      const { data, status, error } = await createDog(name, bio, image, age, breed);
       if (status >= 400) {
         setMessage('Something went wrong :(');
+        console.error(error);
       } else {
         history.push(`/dogs/${data.id}`);
       }
